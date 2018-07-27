@@ -1,0 +1,35 @@
+<% include ./partial/header %>
+
+      <main>
+        <a href="/" class="home-button"><span class="fa fa-home"></span></a>
+        <h1 class="mb-5">Contact Me</h1>
+        <form action="/contact" method="post">
+
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Email Address" name="email" required="">
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <textarea name="message" id="" class="form-control" placeholder="Write some words of encouragement" cols="30" rows="10" required=""></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+            </div>
+          </div>
+
+
+        </form>
+
+      </main>
+    </div>
+
+<% include ./partial/footer %>
