@@ -24,9 +24,6 @@ app.get('/contact', (req, res) => {
     res.render("contact");
 })
 
-app.get('/resume', (req, res) => {
-    res.render("resume");
-})
 
 app.post('/contact', (req, res) => {
   console.log(req.body)

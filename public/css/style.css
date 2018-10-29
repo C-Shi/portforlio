@@ -1,10 +1,10 @@
 body {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: 'KoHo', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.8;
-  color: #b3b3b3;
-  background: #fff;
+  color: #333;
+  background: #ffeeee;
 }
 
 a {
@@ -38,6 +38,10 @@ h1, h2, h3, h4, h5 {
   box-shadow: none !important;
   height: 50px;
   border-width: 2px;
+}
+
+main .intro {
+  text-align:justify;
 }
 
 textarea.form-control {
@@ -391,7 +395,7 @@ main {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #F73859;
+  background: #ff7a7a;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
