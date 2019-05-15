@@ -3,23 +3,24 @@
       <main>
         <a href="/" class="home-button"><span class="fa fa-home"></span></a>
         <h1 class="mb-5">Contact Me</h1>
-        <form action="/contact" method="post">
+        <form action="/contact" method="post" id="form">
 
           <div class="row mb-4">
             <div class="col-md-12">
-              <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+              <input type="text" class="form-control" placeholder="Full Name" name="name" id="name" required>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col-md-12">
-              <input type="text" class="form-control" placeholder="Email Address" name="email" required="">
+              <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required="">
             </div>
           </div>
           <div class="row mb-4">
             <div class="col-md-12">
-              <textarea name="message" id="" class="form-control" placeholder="Write some words of encouragement" cols="30" rows="10" required=""></textarea>
+              <textarea name="message" class="form-control" id="message" placeholder="Write some words of encouragement" cols="30" rows="10" required=""></textarea>
             </div>
           </div>
+          <h5 id="response"></h5>
           <div class="row">
             <div class="col-md-12">
               <input type="submit" class="btn btn-primary btn-block" value="Send Message">
@@ -31,5 +32,36 @@
 
       </main>
     </div>
+
+    <script>
+      $('#form').on('submit', function(e){
+        e.preventDefault();
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var text = $('#message').val();
+
+        $.post({
+          url: '/contact',
+          data: {
+            email: email,
+            contact: name,
+            message: text
+          }
+        })
+        .done(function(response) {
+          $('#response').text(response);
+
+        })
+        .fail(function(response){
+          $('#response').text(response.responseText);
+        })
+        .always(function(response) {
+          $('#name').val('');
+          $('#email').val('');
+          $('#message').val('');
+        })
+
+      })
+    </script>
 
 <% include ./partial/footer %>
